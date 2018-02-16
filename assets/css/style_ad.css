@@ -1,0 +1,268 @@
+/*
+Custom CSS
+BY: AUBYNJ
+
+*/
+
+.dashboard-cate{
+	margin: 0;
+	min-height: 80vh;
+	padding: 10px;
+	background-color: #f8f9fa !important;
+}
+.dashboard-cate li{
+	list-style-type: none;
+	height: 30px;
+	line-height: 40px;
+	margin-bottom: 5px;
+	padding-left: 1rem !important;
+	font-weight: 500px;
+	color: #333;
+}
+
+.dashboard-cate li > a{
+	color: inherit;
+    display: block;
+    height: inherit;
+    text-decoration: none;
+}
+.dashboard-cate li.selectedItem{
+    background: inherit;
+    cursor: default;
+}
+.dashboard-cate li > a.selected{
+	color: #007bff;
+}
+.move{
+	margin-top: 10px;
+}
+.left-marg{
+	margin-left: 10px;
+}
+
+.add-post-model{
+
+}
+
+.down{
+	margin-top: 50px;
+}
+.post-item-image-label{
+  padding: 3%;
+  line-height: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid green;
+  color: green;
+}
+
+.white{
+	color:#fff;
+}
+.input-file{
+  visibility: hidden;
+}
+.front-upload{
+  height: 10px;
+}
+.image-preview{
+  height:110px;
+  width: 120px;
+}
+
+.btn-floating{
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	padding: 10px;
+	text-align: center;
+	float: right;
+	display: inline-inline;
+}
+.fixed-action-btn{
+	position: fixed;
+	right: 50px;
+	padding-top: 15px;
+	margin-bottom: 0px;
+	bottom: 100px;
+}
+
+.invalid{
+  color: red;
+}
+.form-field{
+  margin-top: 80px ;
+  width: 100%;
+}
+.form-input{
+  height: 40px;
+}
+.center-text{
+  text-align: center;
+}
+
+.postItems{
+	width: inherit;
+	height: inherit;
+}
+.btn-custom1{
+	border:1px solid #007bff;
+	background-color: transparent;
+	color: #fff;
+}
+.btn-custom1:hover{
+	background-color:#007bff;
+	color: #fff;
+	border:1px solid #007bff;
+}
+.btn-custom1:focus{
+	background-color:#007bff;
+	color: #fff;
+	border:1px solid #007bff;
+}
+
+.btn-custom{
+  width: inherit;
+  height: 40px;
+}
+
+.dropdownLoader{
+	position: relative;
+	visibility: hidden;
+	width: 30%;
+	z-index: 99999;
+	top: 40px;
+	text-align: center;
+	background-color: #000;
+	color: #fff;
+	border-radius: 2px;
+	padding: 10px;
+	left: 35%;
+}
+.dropdownLoader.show{
+	visibility: visible;
+	-webkit-animation: fadein 0.7s;
+    animation: fadein 0.7s;
+}
+.dropdownLoader.hide{
+	visibility: hidden;
+	-webkit-animation: fadeout 0.7s 2.5s;
+    animation: fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein{
+	from {top:0px; opacity: 0;}
+	to {top: 40px; opacity: 1;}
+}
+
+@-webkit-keyframes fadein{
+	from{top:0px; opacity: 0;}
+	to{top:40px; opacity: 1;}
+}
+
+@keyframes fadeout{
+	from{top:40px; opacity: 1;}
+	to{top:0px; opacity: 0;}
+}
+
+@-webkit-keyframes fadeout{
+	from{top:40px; opacity: 1;}
+	to{top:0px; opacity: 0;}
+}
+
+
+/**************
+MEDIA QUERIES
+****************/
+
+@media only screen and (max-width: 600px) {
+  .hide-on-small-only, .hide-on-small-and-down {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .hide-on-med-and-down {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .hide-on-med-and-up {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .hide-on-med-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .hide-on-large-only {
+    display: none !important;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .show-on-large {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  .show-on-medium {
+    display: block !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .show-on-small {
+    display: block !important;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .show-on-medium-and-up {
+    display: block !important;
+  }
+  .some-wrapper img{
+    height:270px;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .show-on-medium-and-down {
+    display: block !important;
+  }
+  .some-wrapper img{
+    height:270px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .center-on-small-only {
+    text-align: center;
+  }
+  .some-wrapper img{
+    height:270px;
+  }
+}
+
+@media only screen and (max-width: 320px){
+  .some-wrapper img{
+    height:200px;
+  }
+
+  .dropdownLoader{
+    width: 190px;
+    margin-left: -40px;
+
+  }
+}
+@media only screen and (max-width: 960px){
+  .some-wrapper img{
+    height:260px;
+  }
+}
