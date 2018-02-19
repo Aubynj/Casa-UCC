@@ -45,6 +45,74 @@ body{
   background-image: url("../img/back.jpg");
   height: 400px;
 }
+.div-sec{
+  margin-top: 30px;
+}
+
+.vision{
+  font-size: 9px;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  margin-left: 20px;
+  line-height: 8px;
+  top: -5px;
+}
+
+.side-div{
+  position: fixed;
+  width: 0;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #fff;
+  overflow-x: hidden;
+  padding-top: 0.3s;
+  transition: 0.5s ease-in;
+}
+
+.side-div img{
+  display: block;
+  margin-left: 25px;
+}
+.side-logo{
+  margin-left: 25px;
+  font-size: 9px;
+}
+.logo-pic-div{
+  border-bottom: 1px solid #ccc;
+
+}
+.side-div-img{
+  width: 75px;
+  height: 75px;
+  border-radius: 100%;
+  margin: 5px 0px 0px 0px;
+}
+.side-div-list{
+  float: none;
+  list-style-type: none;
+  line-height: 30px;
+  padding-left: 30px;
+  font-size: 15px;
+}
+
+.side-div li a:hover{
+  color: #000;
+  list-style-type: none;
+}
+.side-div li:hover{
+  background-color:rgba(0, 0, 0, 0.1);
+  list-style-type: none;
+}
+
+.closeSide{
+  float: right;
+  margin-right: 20px;
+  font-size: 15px;
+  color:#000;
+}
 
 .box-image{
   max-width: 100px;
@@ -76,9 +144,15 @@ body{
 .footer-mail{
   display: flex;
 }
+.logo-brand{
+  font-weight: bold;
+}
+ .single{
+   font-size: 25px;
+ }
 
 .footer-mail input{
-  width: 500px;
+  width: 400px;
 }
 .footer-list{
   list-style-type: none;

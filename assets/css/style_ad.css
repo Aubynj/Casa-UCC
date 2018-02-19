@@ -20,6 +20,13 @@ BY: AUBYNJ
 	color: #333;
 }
 
+.input-file-edit{
+  visibility: hidden;
+}
+.postTitle, .successTitle{
+  font-weight: bold;
+}
+
 .dashboard-cate li > a{
 	color: inherit;
     display: block;
@@ -44,6 +51,24 @@ BY: AUBYNJ
 
 }
 
+.side-div{
+  position: fixed;
+  width: 0;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #ccc;
+  overflow-x: hidden;
+  padding-top: 0.3s;
+  transition: 0.5s ease-in;
+}
+.closeSide{
+  right: 100px;
+  margin-left: 270px;
+  font-size: 15px;
+}
+
 .down{
 	margin-top: 50px;
 }
@@ -55,6 +80,15 @@ BY: AUBYNJ
   border: 1px solid green;
   color: green;
 }
+.multi-image-label{
+  padding: 3%;
+  line-height: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid green;
+  color: green;
+  margin-left: 10px;
+}
 
 .white{
 	color:#fff;
@@ -62,6 +96,14 @@ BY: AUBYNJ
 .input-file{
   visibility: hidden;
 }
+.multi-file{
+  visibility: hidden;
+}
+
+.success-input-file{
+  visibility: hidden;
+}
+
 .front-upload{
   height: 10px;
 }
@@ -120,14 +162,29 @@ BY: AUBYNJ
 	color: #fff;
 	border:1px solid #007bff;
 }
+.btn-admin{
+  width: inherit;
+  height: 200px;
+  font-size: 20px;
+  background-color: transparent;
+  color:inherit;
+  border-radius: 10px;
+}
+.btn-admin:hover{
+  transition: 0.5s ease-in;
+}
 
 .btn-custom{
   width: inherit;
   height: 40px;
 }
 
+.action-edit, .action-delete{
+  font-size: 18px;
+  cursor: pointer;
+}
 .dropdownLoader{
-	position: relative;
+	position: absolute;
 	visibility: hidden;
 	width: 30%;
 	z-index: 99999;

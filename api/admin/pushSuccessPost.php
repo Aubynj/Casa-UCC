@@ -8,7 +8,7 @@
       $postDate = date('Y-m-d');
 
       //Variables to hold images in database
-      $imageDirectory = "../../uploads/images/frontpost/";
+      $imageDirectory = "../../uploads/images/successpost/";
 
       $postTitle = mysqli_real_escape_string($database,trim($_GET['title']));
       $postMessage = mysqli_real_escape_string($database,trim($_GET['message']));
@@ -23,7 +23,7 @@
         if($newFileEXT == 'jpg' || $newFileEXT == 'png' || $newFileEXT == 'jpeg'){
           move_uploaded_file($_FILES["postImage"]["tmp_name"],$targetImgFile);
 
-          $query = "INSERT INTO frontpost(post_title,post_message,post_image,post_date) VALUES (?,?,?,NOW())";
+          $query = "INSERT INTO successpost(post_title,post_message,post_image,post_date) VALUES (?,?,?,NOW())";
 
           $prepareStatement = $database->prepare($query);
           $prepareStatement->bind_param('sss',$postTitle,$postMessage,$postImageNameStore);

@@ -2,17 +2,17 @@
 	include "../dbConfig.php";
 
 	$postArray = array();
-	$counter = 0;
-	$query = "SELECT * FROM post";
+	$counter = 1;
+	$query = "SELECT * FROM frontpost";
 	$result = $database->query($query);
 
 	if($result -> num_rows > 0){
-		echo "<table>
-				<h5><strong>Post Items</strong></h5><hr>
-				<thead>
+		echo "<table class='table table-bordered table-hover'>
+				<h5><strong>Front Post Items</strong></h5><hr>
+				<thead class='thead-dark'>
 				<tr>
 				<th>#</th>
-				<th>Post Subject</th>
+				<th>Post Title</th>
 				<th>Post date</th>
 				<th>Post Time</th>
 				<th>Action</th>
@@ -21,15 +21,16 @@
 				<tbody>
 		";
 		while($row = $result->fetch_assoc()){
-			$itemSubject = $row["post_subject"];
+			$itemSubject = $row["post_title"];
 			$itemMessage = $row["post_message"];
 			$itemDate = $row["post_date"];
 			$itemTime = $row["post_time"];
 
 
 
-
-			$postArray["subject"] = $row["post_subject"];
+      $postArray["id"] = $row["post_id"];
+			$postArray["title"] = $row["post_title"];
+      $postArray["image"]  = $row["post_image"];
 			$postArray["message"] = $row["post_message"];
 			$postArray["date"] = $row["post_date"];
 			$postArray["time"] = $row["post_time"];
@@ -40,17 +41,17 @@
 			echo "
 					<tr>
 						<td>$counter</td>
-						<td><strong>itemSubject</strong></td>
+						<td><strong>$itemSubject</strong></td>
 						<td>$itemDate</td>
 						<td>$itemTime</td>
 						<td>
-							<button type='button'  class='btn indigo accent-2' onclick='viewItem($itemObj)'>
-	                        	<i class='fa fa-eye'></i> View
-	                        </button>
+							<span class='action-edit'><i class='fa fa-pencil action-edit' onclick='viewPost($postObj)'></i></span>
+              &nbsp;&nbsp;&nbsp;&nbsp;
+              <span class='action-delete'><i class='fa fa-trash-o action-delete' onclick='deletePost($postObj)'></i></span>
 						</td>
 					</tr>
 				";
-
+        $counter++;
 			}
 
 			echo "
@@ -58,11 +59,11 @@
 				</table>
 			";
 
-		
+
 	}else{
 		echo "
-		
-				<h4>There Are No Posts Available</h4>
+
+				<h4>There Are No Front Posts Available</h4>
 
 		";
 	}
