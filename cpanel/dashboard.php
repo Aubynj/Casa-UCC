@@ -8,15 +8,14 @@
 			<li class="selectedItem"><a href="front"><i class="fa fa-users"></i> Front Post</a></li>
 			<li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
       <li class="selectedItem"><a href="gallery"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
+      <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
 
 		</section>
 		<section class="col-md-10">
 			<h3 class="move">Dashboard</h3>
 			<section class="row">
 				<section class="col-md-11 left-marg">
-					<canvas class="dashboard-chart">
-
-					</canvas>
+					<canvas id="adminPostsChart" class="dashboard-chart"></canvas>
 				</section>
 			</section>
 		</section>

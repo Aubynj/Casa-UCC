@@ -28,7 +28,9 @@ body{
   margin-top: 10px;
   justify-content: space-between !important;
 }
-
+.menu-list li a{
+  text-decoration: none;
+}
 .nav-scroller{
   position: relative;
   z-index: 2;
@@ -36,6 +38,10 @@ body{
   line-height: normal;
   overflow-y: hidden;
   border-bottom: 1px solid #e5e5e5;
+}
+
+.myNav{
+  border-bottom: 1px solid #ccc;
 }
 .px-shift{
   padding-right: 1px !important;
@@ -48,6 +54,8 @@ body{
 .div-sec{
   margin-top: 30px;
 }
+
+
 
 .vision{
   font-size: 9px;
@@ -70,6 +78,14 @@ body{
   overflow-x: hidden;
   padding-top: 0.3s;
   transition: 0.5s ease-in;
+}
+
+.removeBorder{
+  border: 1px solid #fff;
+}
+
+.slider_image{
+  width: 400px;
 }
 
 .side-div img{
@@ -101,6 +117,7 @@ body{
 .side-div li a:hover{
   color: #000;
   list-style-type: none;
+  text-decoration: none;
 }
 .side-div li:hover{
   background-color:rgba(0, 0, 0, 0.1);
@@ -156,6 +173,16 @@ body{
 }
 .footer-list{
   list-style-type: none;
+}
+.footer-list > li a{
+  color: #00FF;
+  display: block;
+  text-decoration: none;
+}
+.footer-box{
+  width: 100%;
+  margin-left: 100px;
+
 }
 /**************
 MEDIA QUERIES
@@ -216,6 +243,11 @@ MEDIA QUERIES
   .some-wrapper img{
     height:270px;
   }
+  .footer-box{
+    width: 100%;
+    margin-left: 10px;
+
+  }
 }
 
 @media only screen and (max-width: 992px) {
@@ -234,16 +266,32 @@ MEDIA QUERIES
   .some-wrapper img{
     height:270px;
   }
+  .footer-box{
+    width: 100%;
+    margin-left: 10px;
+
+  }
 }
 
 @media only screen and (max-width: 320px){
   .some-wrapper img{
     height:200px;
   }
+
+  .footer-box{
+    width: 100%;
+    margin-left: 10px;
+
+  }
 }
 @media only screen and (max-width: 960px){
   .some-wrapper img{
     height:260px;
+  }
+  .footer-box{
+    width: 100%;
+    margin-left: 10px;
+
   }
 }
 .no-js #loader { display: none;  }

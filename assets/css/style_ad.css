@@ -20,6 +20,9 @@ BY: AUBYNJ
 	color: #333;
 }
 
+#message-text{
+  width: 100%;
+}
 .input-file-edit{
   visibility: hidden;
 }
@@ -69,6 +72,12 @@ BY: AUBYNJ
   font-size: 15px;
 }
 
+.field-section{
+  margin: 50px auto auto auto;
+  width: 50%;
+  padding-top: 10px;
+}
+
 .down{
 	margin-top: 50px;
 }
@@ -103,7 +112,16 @@ BY: AUBYNJ
 .success-input-file{
   visibility: hidden;
 }
-
+.slider-input-file{
+  visibility: hidden;
+}
+/*
+.sliderImages{
+  display: flex;
+  flex-direction: row;
+  overflow-x: hidden;
+}
+*/
 .front-upload{
   height: 10px;
 }
@@ -172,6 +190,18 @@ BY: AUBYNJ
 }
 .btn-admin:hover{
   transition: 0.5s ease-in;
+}
+
+.btn-slider{
+  width: inherit;
+  height: 200px;
+  font-size: 20px;
+  background-color: transparent;
+  color:inherit;
+  border: 1px solid #ccc;
+}
+.btn-slider:hover{
+  background-color: inherit;
 }
 
 .btn-custom{

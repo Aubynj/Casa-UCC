@@ -1,12 +1,13 @@
 const constants = {
   updateSuccessImageURL : "../api/admin/updateSuccessImage.php",
   updateSuccessNoURL  :  "../api/admin/updateSuccessNo.php",
-  deleteSuccessPostURL : "../api/admin/deleteSuccessPost.php"
+  deleteSuccessPostURL : "../api/admin/deleteSuccessPost.php",
+  sliderImageURL     : "../api/admin/sliderImagePost.php",
+  getSliderImagesURL : "../api/admin/getSlidersImages.php"
 };
 
 //Some Methods will be called here
-
-
+getSliderImages();
 
 
 
@@ -34,7 +35,7 @@ $(".edit-success-submit").on("submit",function(event){
 
     //Let make a post request to php
     $.post(constants.updateSuccessNoURL, data,function(response){
-
+      console.log(response);
       if(response.success){
         dropdownLoader(response.message,"success");
           setTimeout(function(){
@@ -80,6 +81,54 @@ $(".edit-success-submit").on("submit",function(event){
 
 }
 
+});
+
+//Sliders images and post can be found here
+$(".slider-item-submit").on("submit",function(event){
+  event.preventDefault();
+
+  var formData = new FormData($(this)[0]);
+  var title = $("#sliderPostTitle").val().trim(),
+      message = $("#sliderPostMsg").val().trim(),
+      image = document.getElementById('slider-post-image-item').files;
+
+  checkValidity(image);
+
+  if(image.length < 1){
+    dropdownLoader("Please select a valid image or a valid image format","error");
+  }else if(title == ""){
+    dropdownLoader("Post title is required","error");
+  }else if(message == "" ){
+    dropdownLoader("Post message is required","error");
+  }else{
+      var sliderpost = constants.sliderImageURL+"?title="+title+"&message="+message
+
+      $.ajax({
+        url : sliderpost,
+        type : 'POST',
+        data : formData,
+        enctype : 'multiparty/form-data',
+        contentType : false,
+        processData : false,
+        success : function(response){
+          console.log(response);
+          if(response.success){
+            dropdownLoader(response.message,"success");
+            setTimeout(function(){
+              $(".slider-item-submit")[0].reset();
+              window.location.href="post";
+            },2000)
+          }else if(!response.success){
+            dropdownLoader(response.message,"error");
+            $(".slider-item-submit")[0].reset();
+          }
+        },
+        error : function(error){
+          console.log(error);
+        }
+      })
+  }
+
 })
 
 
@@ -105,13 +154,12 @@ $(".delete-success-submit").on("submit",function(event){
     }
   });
 
-
 })
 
 
 
 
-
+//FUnctions for viewSuccess post
 function viewSuccess(postObj){
   $("#number").val(postObj.id);
   $(".image-preview").prop("src","../uploads/images/successpost/"+postObj.image);
@@ -120,10 +168,30 @@ function viewSuccess(postObj){
   $(".successMsg").val(postObj.message);
   $("#edit-success-modal").modal('show');
 }
-
+//Functions for deleteSuccess post
 function deleteSuccess(postObj){
   $("#number").val(postObj.id);
   $(".successTitle").html(postObj.title);
 
   $("#delete-success-model").modal('show');
+}
+
+function getSliderImages(){
+  $.get(constants.getSliderImagesURL,function(response){
+    console.log(response);
+    $(".sliderImages").html(response);
+  })
+}
+
+
+function checkValidity(image){
+  var fileType = ["image/png","image/jpeg","image/jpg"];
+  for (var i = 0; i < image.length; i++) {
+    if($.inArray(image[i].type,fileType) < 0){
+      document.getElementById('slider-post-image-item').value = "";
+      $("#slider-post-item")[0].reset();
+      dropdownLoader("Some images contains invalid format","error");
+    }
+  }
+
 }

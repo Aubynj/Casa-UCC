@@ -8,12 +8,13 @@
     <li class="selectedItem"><a href="front"><i class="fa fa-users"></i> Front Post</a></li>
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery" class="selected"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
+    <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
 
 		</section>
 		<section class="col-md-10">
 			<section class="row">
         <section class="col-md-3 down wow zoomIn" data-wow-duration="0.2s" data-wow-delay="0.1s">
-          <form class="multiImage" method="post" enctype="multipart/form-data">
+          <form class="multiImage" method="post" enctype="multipart/form-data" id="multi-image">
             <section class="row">
               <label for="subject">Gallery Heading</label>
               <input type="text" name="subject" id="subject" class="form-control" value="">

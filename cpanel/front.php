@@ -8,6 +8,7 @@
     <li class="selectedItem"><a href="front" class="selected"><i class="fa fa-users"></i> Page Post</a></li>
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
+    <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
 
 		</section>
 		<section class="col-md-10">
@@ -26,7 +27,7 @@
       </section>
 
       <section class="col-md-3 down wow zoomIn" data-wow-duration="0.2s" data-wow-delay="0.4s">
-        <button type="button" class="btn btn-primary btn-admin">Slider Post</button>
+        <button type="button" class="btn btn-primary btn-admin" data-target="#add-slider-modal" data-toggle="modal">Slider Post</button>
       </section>
 		</section>
 	</section>
@@ -62,9 +63,9 @@
                 </section>
               </section>
               <section class="row">
-                <section class="col-md-4">
+                <section class="col-8">
                   <label for="message">Post Message</label>
-                  <textarea class="postMsg"></textarea><br>
+                  <textarea class="postMsg form-control" id="message-text"></textarea><br>
                 </section>
               </section>
               <section class="row">
@@ -108,9 +109,9 @@
                  </section>
                </section>
                <section class="row">
-                 <section class="col-md-4">
+                 <section class="col-8">
                    <label for="message">Post Message</label>
-                   <textarea class="successPostMsg" rows="8" col="50"></textarea><br>
+                   <textarea class="successPostMsg form" rows="8" col="50"></textarea><br>
                  </section>
                </section>
                <section class="row">
@@ -129,7 +130,7 @@
      </div>
 
     <!-- Modal for Sliders-->
-     <div class="modal fade" tabindex="-1" role="dialog" id="add-success-model">
+     <div class="modal fade" tabindex="-1" role="dialog" id="add-slider-modal">
        <div class="modal-dialog" role="document">
          <div class="modal-content">
            <div class="modal-header">
@@ -139,24 +140,23 @@
              </button>
            </div>
            <div class="modal-body">
-             <form class="success-post-item-submit" method="post" enctype="multipart/form-data" id="success-post-item">
+             <form class="slider-item-submit" method="post" enctype="multipart/form-data" id="slider-post-item">
                <section class="row">
                  <section class="col-md-4">
-                   <img src="../assets/img/item-img-preview.png" class="image-preview" alt="">
-                   <input type="file" class="success-input-file" id="success-post-image-item" accept="image/*">
-                   <label for="success-post-image-item" class="post-item-image-label">Upload Image</label><br><br><br>
+                   <input type="file" class="slider-input-file" name="files[]" id="slider-post-image-item" accept="image/*" multiple>
+                   <label for="slider-post-image-item" class="post-item-image-label">Upload Image</label><br><br><br>
                  </section>
                </section>
                <section class="row">
                  <section class="col-md-4">
                    <label for="title">Post Title</label>
-                   <input type="text" class="form-control successPostTitle"><br>
+                   <input type="text" class="form-control sliderPostTitle" id="sliderPostTitle"><br>
                  </section>
                </section>
                <section class="row">
-                 <section class="col-md-4">
+                 <section class="col-8">
                    <label for="message">Post Message</label>
-                   <textarea class="successPostMsg" rows="8" col="50"></textarea><br>
+                   <textarea class="sliderPostMsg form-control" rows="8" col="50" id="sliderPostMsg"></textarea><br>
                  </section>
                </section>
                <section class="row">

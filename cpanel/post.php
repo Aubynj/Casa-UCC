@@ -8,17 +8,22 @@
     <li class="selectedItem"><a href="front"><i class="fa fa-users"></i> Front Post</a></li>
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
+    <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
 
 		</section>
 		<section class="col-md-10">
 			<section class="row">
-				<section class="col-md-11 left-marg">
+				<section class="col-md-10 left-marg">
 					<section class="postItems center-text down">
 
 					</section><br><br>
           <section class="successItems center-text down">
 
 					</section><br><br><br>
+          <h3>Sliders Viewpoint</h3>
+          <section class="row sliderImages">
+
+          </section>
 				</section>
 			</section>
 		</section>

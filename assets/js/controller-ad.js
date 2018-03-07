@@ -9,13 +9,14 @@ const CONSTANTS = {
   postGalleryImgURL : "../api/admin/multiGallery.php",
   updateWithoutImageURL : "../api/admin/updateWithoutImage.php",
   updateWithImage  :  "../api/admin/updateWithImage.php",
-  deletePostItemUrl : "../api/admin/deletePostItem.php"
+  deletePostItemUrl : "../api/admin/deletePostItem.php",
+  getAdminPostGraph : "../api/admin/adminPostGraphSummary.php"
 };
 
 //Initialising some Methods
 getAllPostItems();
 getAllSuccessPost();
-
+getAdminDashboardPostGraph();
 
 
 
@@ -200,13 +201,19 @@ $("#success-post-item").on("submit",function(event){
 //Multiple images uploads comes here
 $(".multiImage").on("submit",function(event){
   event.preventDefault();
+
   var subject = $("#subject").val().trim(),
-      img = $("#multi-file").val().trim();
+      img = document.getElementById('multi-file').files;
 
-  if(subject == "" || img == ""){
-    dropdownLoader("Fields cannot be empty","error");
+
+
+      checkValidityInGallery(img);
+
+  if(img.length < 1){
+    dropdownLoader("Images contains invalid format","error");
+  }else if(subject == ""){
+    dropdownLoader("All fields are required","error");
   }else{
-
       var formData = new FormData($(this)[0]);
 
       $.ajax({
@@ -369,6 +376,19 @@ function hideLoader(){
 }
 
 
+//Function to check for valid images
+function checkValidityInGallery(image){
+  var fileType = ["image/jpg","image/png","image/jpeg"];
+
+  for (var i = 0; i < image.length; i++) {
+    if($.inArray(image[i].type,fileType) < 0){
+      $('#multi-image')[0].reset();
+      document.getElementById('multi-file').value = "";
+      dropdownLoader("Invalid image format. Try again","error");
+    }
+  }
+}
+
 //Function to get all post items
 function getAllPostItems(){
   $.get(CONSTANTS.getAdminAllPostURL,function(response){
@@ -404,4 +424,55 @@ function deletePost(postObj){
   $(".postTitle").html(postObj.title);
 
   $("#delete-post-model").modal('show');
+}
+
+
+function getAdminDashboardPostGraph(){
+  $.get(CONSTANTS.getAdminPostGraph,function(response){
+    console.log(response);
+    drawChart("adminPostsChart",'bar','Post Graph',response.months,response.posts);
+  })
+}
+
+
+//User Graph summary
+function drawChart(elementId,chartType,title,labels,data) {
+
+	var ctx = document.getElementById(elementId);
+	var myChart = new Chart(ctx, {
+	    type: chartType,
+	    data: {
+	        labels: labels,
+	        datasets: [{
+	            label: title,
+	            data: data,
+	            backgroundColor: [
+	                'rgba(255, 99, 132, 0.2)',
+	                'rgba(54, 162, 235, 0.2)',
+	                'rgba(255, 206, 86, 0.2)',
+	                'rgba(75, 192, 192, 0.2)',
+	                'rgba(153, 102, 255, 0.2)',
+	                'rgba(255, 159, 64, 0.2)'
+	            ],
+	            borderColor: [
+	                'rgba(255,99,132,1)',
+	                'rgba(54, 162, 235, 1)',
+	                'rgba(255, 206, 86, 1)',
+	                'rgba(75, 192, 192, 1)',
+	                'rgba(153, 102, 255, 1)',
+	                'rgba(255, 159, 64, 1)'
+	            ],
+	            borderWidth: 1
+	        }]
+	    },
+	    options: {
+	        scales: {
+	            yAxes: [{
+	                ticks: {
+	                    beginAtZero:true
+	                }
+	            }]
+	        }
+	    }
+	});
 }

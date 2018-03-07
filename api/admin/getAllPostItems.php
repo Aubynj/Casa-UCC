@@ -3,7 +3,7 @@
 
 	$postArray = array();
 	$counter = 1;
-	$query = "SELECT * FROM frontpost";
+	$query = "SELECT * FROM frontpost ORDER BY post_id DESC";
 	$result = $database->query($query);
 
 	if($result -> num_rows > 0){
