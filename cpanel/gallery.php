@@ -9,26 +9,34 @@
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery" class="selected"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
     <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
-
+    <li class="selectedItem"><a href="executive"><i class="fa fa-eye"></i> Executive Post</a></a></li>
+    <li class="selectedItem"><a href="members-exec" ><i class="fa fa-eye"></i> View Executives</a></a></li>
+    <li class="selectedItem"><a href="postData"><i class="fa fa-address-card"></i> Page Writing</a></li>
+    
 		</section>
 		<section class="col-md-10">
 			<section class="row">
-        <section class="col-md-3 down wow zoomIn" data-wow-duration="0.2s" data-wow-delay="0.1s">
-          <form class="multiImage" method="post" enctype="multipart/form-data" id="multi-image">
-            <section class="row">
-              <label for="subject">Gallery Heading</label>
-              <input type="text" name="subject" id="subject" class="form-control" value="">
-            </section>
-
-            <section class="row">
-              <section>
-                <input type="file" name="files[]" class="multi-file"  id="multi-file" accept="image/*" multiple><br><br>
+        <section class="galleryDiv">
+          <section class="col-md-6 down wow zoomIn" data-wow-duration="0.2s" data-wow-delay="0.1s">
+            <form class="multiImage" method="post" enctype="multipart/form-data" id="multi-image">
+              <section class="row">
+                <label for="subject">Gallery Heading</label>
+                <input type="text" name="subject" id="subject" class="form-control" value="">
               </section>
 
-              <label for="multi-file" class="multi-image-label">Upload Image</label><br><br><br><br/>
-              <button type="submit" class="btn btn-primary" name="button">Submit</button>
-            </section>
-          </form>
+                <section class="row">
+                  <input type="file" name="files[]" class="multi-file"  id="multi-file" accept="image/*" multiple />
+                </section>
+
+                <section class="row">
+                <label for="multi-file" class="multi-image-label" style="margin: 0px">Upload Image</label><br><br><br><br/>
+              </section><br><br>
+
+              <section class="row">
+                 <button type="submit" class="btn btn-primary" name="button">Submit</button>
+              </section>
+            </form>
+          </section>
         </section>
 			</section>
 		</section>

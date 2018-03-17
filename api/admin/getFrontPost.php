@@ -14,7 +14,7 @@
 
 
         echo "
-              <section class='col-md-3 text-center'>
+              <section class='col-md-3 text-center' >
                 <section class='card'>
                   <img class='card-img-top' src='uploads/images/$postImage' alt='card-image-top'>
                   <section class='card-body'>

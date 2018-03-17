@@ -16,6 +16,7 @@ if(!isset($_SESSION['adminId'])){
     <link rel="stylesheet" href="../assets/css/style_ad.css">
     <link rel="stylesheet" href="../assets/css/animate.css">
     <link rel="stylesheet" href="../assets/css/font-awesome.min.css">
+    
 
     <title>Administrator | Dashboard</title>
   </head>
@@ -39,10 +40,15 @@ if(!isset($_SESSION['adminId'])){
     <section class="side-div" id="sideNav">
       <br>
       <a href="javascript:void(0)" style="color:#fff" class="closeSide"><span class="fa fa-close"></span></a>
-        <ul>
-          <li>BOu</li>
-          <li>Hey</li>
-          <li>COme</li>
-          <li>GET</li>
-        </ul>
+        <ul class="side-div-list">
+            <a href="dashboard" class="nav-link"><i class="fa fa-dashboard"></i> Dashboard</a>
+            <a href="post" class="nav-link"><i class="fa fa-eye"></i> All Post</a>
+            <a href="front" class="nav-link"><i class="fa fa-users"></i> Front Post</a>
+            <a href="users" class="nav-link"><i class="fa fa-users"></i> Users</a></a>
+            <a href="gallery" class="nav-link"><i class="fa fa-users"></i> Gallery Uploads</a>
+            <a href="view" class="nav-link"><i class="fa fa-eye"></i> View Gallery Images</a>
+            <a href="executive" class="nav-link"><i class="fa fa-address-card"></i> Executive Post</a>
+            <a href="members-exec"  class="nav-link"><i class="fa fa-eye"></i> View Executives</a>
+            <a href="postData"  class="nav-link"><i class="fa fa-address-card"></i> Page Writing</a>
+          </ul>
     </section>

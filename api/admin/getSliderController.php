@@ -14,7 +14,7 @@
     $sliderNo =  sizeof($sliderNewNames);
 
     echo "
-    <section class='card flex-md-row mb-4 box-shadow h-md-250 section-big some-wrapper removeBorder'>
+    <section class='card flex-md-row mb-4 box-shadow h-md-250 section-big some-wrapper removeBorder wow zoomIn' data-wow-duration='0.2s' data-wow-delay='0.2s'>
       <section class='card-body d-flex flex-column align-items-start'>
         <h2>$slider_title</h2>
         <p class='card-text'>$slider_message</p>

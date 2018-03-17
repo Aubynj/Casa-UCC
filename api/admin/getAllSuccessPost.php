@@ -28,9 +28,9 @@
 
 
 
-      $postArray["id"] = $row["post_id"];
+      		$postArray["id"] = $row["post_id"];
 			$postArray["title"] = $row["post_title"];
-      $postArray["image"]  = $row["post_image"];
+      		$postArray["image"]  = $row["post_image"];
 			$postArray["message"] = $row["post_message"];
 			$postArray["date"] = $row["post_date"];
 			$postArray["time"] = $row["post_time"];

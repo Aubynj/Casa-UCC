@@ -9,7 +9,10 @@
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
     <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
-
+    <li class="selectedItem"><a href="executive"><i class="fa fa-address-card"></i> Executive Post</a></a></li>
+    <li class="selectedItem"><a href="members-exec" ><i class="fa fa-eye"></i> View Executives</a></a></li> 
+    <li class="selectedItem"><a href="postData"><i class="fa fa-address-card"></i> Page Writing</a></li>
+    
 		</section>
 		<section class="col-md-10">
 			<section class="row">
@@ -28,11 +31,11 @@
 			</section>
 		</section>
 	</section>
-	<section class="fixed-action-btn justify-content-end">
+<!--	<section class="fixed-action-btn justify-content-end">
 		<a class="btn btn-primary btn-floating btn-lg pulse" data-target="#add-post-model" data-toggle="modal">
 			<i class="fa fa-plus white"></i>
 		</a>
-	</section>
+	</section>-->
 
    <!-- Modal for Editing Post  -->
    <div class="modal fade" tabindex="-1" role="dialog" id="edit-post-modal">
@@ -186,6 +189,92 @@
               <section class="row">
                 <section class="col-md-4">
                  <span>Are you sure you want to delete post with title: <span class="successTitle"></span></span>
+                </section>
+              </section>
+              <section class="row">
+                <section class="col-md-4">
+                  <button type="submit" class="btn btn-primary">Yes Delete</button>
+                </section>
+              </section>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Edit Slider-->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="edit-slider-model">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Slider</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="edit-slider-submit" method="post" enctype="multipart/form-data" id="edit-slider">
+              <section class="row galImg">
+            
+              </section><br><br><br>
+
+              <section class="row">
+                 <input type="hidden" id="numText" value="">
+                 <input type="hidden" id="numImg" value="">
+              </section>
+
+              <section class="row">
+                <section class="col-md-4">
+                  <label for="title">Post Title</label>
+                  <input type="text" class="form-control sliderTitle"><br>
+                </section>
+              </section>
+              <section class="row">
+                <section class="col-md-4">
+                  <label for="message">Post Message</label>
+                  <textarea class="sliderMsg form-control"></textarea><br>
+                </section>
+              </section>
+              <section class="row">
+                <section class="col-md-4">
+                  <button type="submit" class="btn btn-primary">Update</button>
+                </section>
+              </section>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--Delete Modal for slider-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="delete-slider-model">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Delete Slider</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class="delete-slider-submit" method="post" enctype="multipart/form-data" id="delete-slider">
+              <section class="row">
+                <section class="col-md-4">
+                  <input type="hidden" id="numText" value="">
+                  <input type="hidden" id="numImg" value="">
+                </section>
+              </section>
+              <section class="row">
+                <section class="col-md-4">
+                 <span>Are you sure you want to delete post with title: <b><span class="sliderTitle"></span></b></span>
                 </section>
               </section>
               <section class="row">

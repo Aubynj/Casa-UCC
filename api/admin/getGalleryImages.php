@@ -4,7 +4,7 @@
 
     $queryGallery = "SELECT * FROM gallery_info INNER JOIN gallery_images on gallery_info_id = gallery_id";
     $result= $database->query($queryGallery);
-    $counter = 0.1;
+    $counter = 0.2;
 
     if($result->num_rows > 0){
       while($row = $result->fetch_assoc()){
@@ -16,11 +16,12 @@
         //Uncode database to be handle by json
         $imageData['title'] = $row['gallery_subject'];
         $imageData['image_name'] = unserialize($gallery);
+        $imageData['id'] = $row['gallery_img_id'];
 
         $imageObj = json_encode($imageData);
 
         echo "
-            <section class='col-md-3 text-center wow zoomIn' data-wow-duration='0.2s' data-wow-delay='.$counter s'>
+            <section class='col-md-3 text-center wow zoomIn' data-wow-duration='0.2s' data-wow-delay='".$counter."s'>
               <section class='card removeBorder'>
                 <img class='card-img-top' src='./uploads/images/gallery/$galleryImg[0]' alt='card-image-to' onclick='popUpPhto($imageObj)'>
                 <section class='card-body'>

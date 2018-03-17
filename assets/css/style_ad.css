@@ -1,4 +1,4 @@
-/*
+f/*
 Custom CSS
 BY: AUBYNJ
 
@@ -54,6 +54,23 @@ BY: AUBYNJ
 
 }
 
+.status{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.icon-shift{
+  margin-left:180px;
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.execImage{
+  height:250px;
+  width: inherit;
+}
+
 .side-div{
   position: fixed;
   width: 0;
@@ -78,9 +95,21 @@ BY: AUBYNJ
   padding-top: 10px;
 }
 
+.form-data-field{
+  margin: 80px auto auto auto;
+}
+
+.previewBody{
+  width: inherit;
+  height: 400px;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 .down{
 	margin-top: 50px;
 }
+
 .post-item-image-label{
   padding: 3%;
   line-height: 20px;
@@ -122,10 +151,21 @@ BY: AUBYNJ
   overflow-x: hidden;
 }
 */
+
+.galleryDiv{
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 250px;
+  width: 60%;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
 .front-upload{
   height: 10px;
 }
-.image-preview{
+.image-preview, .image-preview-pres, .image-preview-exec{
   height:110px;
   width: 120px;
 }
@@ -204,9 +244,19 @@ BY: AUBYNJ
   background-color: inherit;
 }
 
+.sliderMod{
+  height: 200px;
+  width: inherit;
+}
+
 .btn-custom{
   width: inherit;
   height: 40px;
+}
+
+#pointme{
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .action-edit, .action-delete{
@@ -217,8 +267,8 @@ BY: AUBYNJ
 	position: absolute;
 	visibility: hidden;
 	width: 30%;
-	z-index: 99999;
-	top: 40px;
+	z-index: 9999999999;
+	top: 50px;
 	text-align: center;
 	background-color: #000;
 	color: #fff;

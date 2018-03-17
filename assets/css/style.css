@@ -27,9 +27,11 @@ body{
   list-style-type: none;
   margin-top: 10px;
   justify-content: space-between !important;
+
 }
 .menu-list li a{
   text-decoration: none;
+  color: #26262acc;
 }
 .nav-scroller{
   position: relative;
@@ -51,11 +53,220 @@ body{
   background-image: url("../img/back.jpg");
   height: 400px;
 }
+.bg-exec{
+  background-image: url("../img/wow.jpg");
+  height: 400px;
+}
+
+.bg-depart{
+  background-image: url("../img/mine.jpg");
+  height: 400px;
+}
+
+
+.media-sec{
+  display: flex;
+  flex-direction: row;
+}
+
+.media-sec > li > a{
+  text-decoration: none;
+  list-style-type: none;
+  color: #fff;
+}
+
+.media-sec > li{
+  list-style-type: none;
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.whiteColor{
+  color: #fff;
+}
+
+/* TOP media  */
+.top-media{
+  display: flex;
+  flex-direction: row;
+}
+
+.top-media > li > a{
+  text-decoration: none;
+  list-style-type: none;
+  color: #000;
+}
+
+.px-top{
+  padding-right: 1px !important;
+  margin-top: 150px !important;
+}
+
+.top-media > li{
+  list-style-type: none;
+  margin-right: 15px;
+  font-size: 20px;
+}
+
+.footer-text{
+  color: #ffff;
+}
+
+.parallax{
+   /* The image used */
+    background-image: url("../img/moonlight.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headingText{
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.error-sec{
+  text-align: center;
+  padding-top: 130px;
+  color: #fff;
+}
+
+.contact-sec{
+  padding: 20px;
+}
+.tweets-sec{
+  padding: 20px;
+  height: 300px;
+  overflow-y: auto;
+  border-bottom-left-radius: 10px; 
+  border-bottom-right-radius: 10px: 
+
+}
+
+.twitter-board{
+  color: #ffff;
+}
+
 .div-sec{
   margin-top: 30px;
 }
 
+.mailList{
+  width: 50px;
+}
 
+.invalid{
+  color: #e92424;
+}
+.valid{
+  color: #28a745;
+}
+
+.executive{
+    width: 300px;
+  /*  height: 300px; */
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 15px 30px 10px;
+    position: relative;
+    padding-left: 30px;
+
+}
+
+.gallerySize{
+  height: 500px;
+}
+
+
+.presidentData{
+  margin-left: -60px;
+}
+
+.quotation-heading{
+  position: absolute;
+  z-index: 1;
+  margin: 40px 10px;
+  color: #fff;
+}
+.quotation-heading > h1{
+  color: #fff;
+}
+
+#imageSize{
+  height: 450px;
+}
+
+.execIm{
+  width: inherit;
+}
+
+.heading{
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.mydiv{
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.modal-gallery{
+  width: 100%;
+  margin-top: 20px;
+}
+
+.btn-override{
+  background-color: #3a337d;
+  cursor: alias;
+}
+.btn-override:hover{
+  background-color: #3a337d;
+}
+
+.modal-image{
+  margin: auto;
+  width: 80%;
+
+}
+
+.footup{
+  margin-top:-50px;
+}
+
+.instag{
+  height: 300px;
+  overflow-y: auto;
+}
+
+/*   Social Networks    */
+.fb:hover{
+  color: #3b5998;
+}
+.tw:hover{
+  color:#1dcaff; 
+}
+.inst:hover{
+  color:#fbad50;
+}
+.lin:hover{
+  color: #0077B5;
+}
+
+.hr{
+
+    margin-bottom: 0.5em;
+    border-top: 1px solid #6e7271;
+}
+
+.close-img{
+  z-index: 99999;
+}
 
 .vision{
   font-size: 9px;
@@ -248,6 +459,7 @@ MEDIA QUERIES
     margin-left: 10px;
 
   }
+
 }
 
 @media only screen and (max-width: 992px) {
@@ -257,6 +469,7 @@ MEDIA QUERIES
   .some-wrapper img{
     height:270px;
   }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -269,8 +482,42 @@ MEDIA QUERIES
   .footer-box{
     width: 100%;
     margin-left: 10px;
+  }
+
+  .presImg{
+    margin-left: 170px;  
+  }  
+
+  .execImg{
+    margin-left: 110px;
+  }
+  .executive{
 
   }
+
+}
+@media only screen and (max-width: 480px){
+  #imageSize{
+    height: 300px;
+  }
+
+  .quotation-heading h1{
+    font-size: 20px;
+  }
+  .quotation-heading{
+    margin-top: -100px;
+    width: 400px;
+  }
+
+  .presImg{
+    margin-left: 100px;  
+  }  
+
+  .execImg{
+    margin-left: 40px;
+  }
+
+
 }
 
 @media only screen and (max-width: 320px){
@@ -283,7 +530,36 @@ MEDIA QUERIES
     margin-left: 10px;
 
   }
+  #imageSize{
+    height: 300px;
+  }
+
+  .quotation-heading h1{
+    font-size: 10px;
+  }
+  .quotation-heading{
+    margin-top: -100px;
+    height: 10px;
+    width: 280px;
+  }
+  .gallerySize{
+    height: inherit;
+  }
+
+  .presImg{
+    margin-left: 60px;  
+  }  
+
+  .execImg{
+    margin-left: 0px;
+  }
+
+  .px-top{
+      padding-right: 1px !important;
+      margin-top: 50px !important;
+    }
 }
+
 @media only screen and (max-width: 960px){
   .some-wrapper img{
     height:260px;
@@ -303,5 +579,5 @@ MEDIA QUERIES
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background: url(../img/loader.png) center no-repeat #fff;
+    background: url(../img/casa.jpg) center no-repeat #fff;
 }

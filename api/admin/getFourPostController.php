@@ -14,7 +14,7 @@
 
 
         echo "
-            <section class='col-md-3 text-center wow zoomIn' data-wow-duration='0.2s' data-wow-delay='$counter s'>
+            <section class='col-md-3 text-center wow zoomIn' data-wow-duration='0.2s' data-wow-delay='".$counter."s'>
               <section class='card removeBorder'>
                 <img class='card-img-top' src='./uploads/images/frontpost/$front_images' alt='card-image-to'>
                 <section class='card-body'>

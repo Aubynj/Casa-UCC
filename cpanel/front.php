@@ -9,7 +9,10 @@
     <li class="selectedItem"><a href="users"><i class="fa fa-users"></i> Users</a></a></li>
     <li class="selectedItem"><a href="gallery"><i class="fa fa-users"></i> Gallery Uploads</a></a></li>
     <li class="selectedItem"><a href="view"><i class="fa fa-eye"></i> View Gallery Images</a></a></li>
-
+    <li class="selectedItem"><a href="executive"><i class="fa fa-eye"></i> Executive Post</a></a></li>
+    <li class="selectedItem"><a href="members-exec" ><i class="fa fa-eye"></i> View Executives</a></a></li>
+    <li class="selectedItem"><a href="postData"><i class="fa fa-address-card"></i> Page Writing</a></li>
+    
 		</section>
 		<section class="col-md-10">
 			<section class="row">
@@ -30,11 +33,6 @@
         <button type="button" class="btn btn-primary btn-admin" data-target="#add-slider-modal" data-toggle="modal">Slider Post</button>
       </section>
 		</section>
-	</section>
-	<section class="fixed-action-btn justify-content-end">
-		<a class="btn btn-primary btn-floating btn-lg pulse" data-target="#add-post-model" data-toggle="modal">
-			<i class="fa fa-plus white"></i>
-		</a>
 	</section>
 
 	 <!-- Modal for Front Post Items  -->

@@ -32,7 +32,7 @@ $(".admin-form").on("submit",function(event){
       adminPass = $("#password").val().trim();
 
   if(adminName == "" || adminPass == ""){
-    dropdownLoader("Sorry Username/Password cannot be empty","error")
+    dropdownLoader("Sorry Username/Password cannot be empty","error");
   }else{
 
     //Let pass correct data info into database for validating

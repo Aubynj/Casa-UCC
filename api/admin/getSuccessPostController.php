@@ -11,7 +11,7 @@
     $success_images  = $row['post_image'];
 
     echo "
-    <section class='card removeBorder'>
+    <section class='card removeBorder wow zoomIn' data-wow-duration='0.2s' data-wow-duration='0.6s'>
       <img class='card-img-top' src='./uploads/images/successpost/$success_images' alt='card-image-top'>
       <section class='card-body'>
         <h5 class='card-title'><strong>$success_title</strong></h5>

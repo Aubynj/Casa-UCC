@@ -30,7 +30,7 @@
         $newFileEXT = end($fileExt);
 
         if($newFileEXT == "jpg" || $newFileEXT == "png" || $newFileEXT == "jpeg"){
-          //Let free storage from delete old image from DB
+          //Let free storage by deleting old image from DB
           unlink("../../uploads/images/frontpost/".$oldImage);
 
           //Rename image and save in DB

@@ -3,7 +3,11 @@ const constants = {
   updateSuccessNoURL  :  "../api/admin/updateSuccessNo.php",
   deleteSuccessPostURL : "../api/admin/deleteSuccessPost.php",
   sliderImageURL     : "../api/admin/sliderImagePost.php",
-  getSliderImagesURL : "../api/admin/getSlidersImages.php"
+  getSliderImagesURL : "../api/admin/getSlidersImages.php",
+  deleteSliderImagesURL : "../api/controller/deleteslider.php",
+  deleteSingleSliderURL : "../api/controller/deleteSingleSlider.php",
+  editSliderPostURL : "../api/controller/editSliderPost.php"
+
 };
 
 //Some Methods will be called here
@@ -35,7 +39,7 @@ $(".edit-success-submit").on("submit",function(event){
 
     //Let make a post request to php
     $.post(constants.updateSuccessNoURL, data,function(response){
-      console.log(response);
+      //console.log(response);
       if(response.success){
         dropdownLoader(response.message,"success");
           setTimeout(function(){
@@ -61,7 +65,7 @@ $(".edit-success-submit").on("submit",function(event){
       contentType : false,
       processData : false,
       success : function(response){
-        console.log(response);
+        //console.log(response);
         if(response.success){
           dropdownLoader(response.message,"success");
             setTimeout(function(){
@@ -124,7 +128,7 @@ $(".slider-item-submit").on("submit",function(event){
           }
         },
         error : function(error){
-          console.log(error);
+          //console.log(error);
         }
       })
   }
@@ -195,3 +199,116 @@ function checkValidity(image){
   }
 
 }
+
+
+function viewSlider(item){
+  $('.sliderTitle').val(item.title);
+  $('.sliderMsg').val(item.post_body);
+  $('#numText').val(item.id_text);
+  $('#numImg').val(item.id_image);
+
+  $('#edit-slider-model').modal('show');
+
+  var size = item.images.length;
+
+  console.log(item);
+
+  var template = "";
+
+  for (var i = 0; i < size; i++) {
+    template += "<section class='col-md-4'>"+
+                    "<img class='sliderMod'  src='../uploads/images/slider/"+item.images[i]+"'>"+
+                  "<i class='fa fa-trash-o' id='pointme' onclick='deleImg("+i+","+item.id_image+")'></i>"+
+                  "</section><br><br>";
+  }
+
+  $(".galImg").html(template);
+
+}
+
+function deleteSlider(item){
+  $('.sliderTitle').html(item.title);
+  $('#numText').val(item.id_text);
+  $('#numImg').val(item.id_image);
+
+  $('#delete-slider-model').modal('show');
+}
+
+
+function deleImg(imgNum,imageId){
+  var img = imgNum;
+  var i = imageId;
+
+  var data = $.param({
+    id : img,
+    Id : i
+  })
+
+  $.post(constants.deleteSingleSliderURL , data , function(response){
+    if(response.success){
+      dropdownLoader(response.message,"success");
+      getSliderImages();
+      $('#edit-slider-model').modal('hide');
+    }else if(!response.success){
+      dropdownLoader(response.message,"error");
+    }
+  })
+}
+
+//Event for handling the slider delete
+$('.delete-slider-submit').on("submit", function(event){
+  event.preventDefault();
+
+  var numText = $('#numText').val();
+  var numImg = $('#numImg').val();
+
+  var delData = $.param({
+    numText : numText,
+    numImg : numImg
+  })
+
+  $.post(constants.deleteSliderImagesURL, delData, function(response){
+    if(response.success){
+      getSliderImages();
+      dropdownLoader(response.message,"success");
+      $('#delete-slider-model').modal('hide');
+    }else if(!response.success){
+      dropdownLoader(response.message,"error");
+    }
+  })
+
+});
+
+
+//handling event for slider text update
+
+$('.edit-slider-submit').on("submit",function(event){
+  event.preventDefault();
+
+  var title = $('.sliderTitle').val().trim(),
+   message = $('.sliderMsg').val().trim(),
+   textId = $('#numText').val().trim();
+
+   if(title == "" || message == "" || textId == ""){
+      dropdownLoader("All fields are required","error");
+   }else{
+
+   var data = $.param({
+    title : title,
+    message : message,
+    textId : textId
+   })
+
+   $.post(constants.editSliderPostURL, data , function(response){
+      if(response.success){
+      dropdownLoader(response.message,"success");
+      getSliderImages();
+      $('#edit-slider-model').modal('hide');
+    }else if(!response.success){
+      dropdownLoader(response.message,"error");
+    }
+   })
+
+  }
+
+})

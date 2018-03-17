@@ -1,11 +1,11 @@
-RewriteEngine on
+RewriteEngine on 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [NC,L]
 
-#ErrorDocument 403  http://localhost/CASA/error/index
-#ErrorDocument 404  http://localhost/CASA/error/index
-ErrorDocument 500  http://localhost/CASA/error/index
+#ErrorDocument 403  
+#ErrorDocument 404  
+#ErrorDocument 500  
 
 
-##Options -Indexes
+Options -Indexes
